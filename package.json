@@ -2,7 +2,7 @@
   "name": "tp-grp-instagram",
   "version": "1.0.0",
   "description": "# 📷Clone instagram",
-  "main": "index.js",
+  "main": "index.php",
   "scripts": {
      "build:css": "tailwindcss build -i ./assets/css/style.css -o ./assets/css/output.css --watch" 
   },
