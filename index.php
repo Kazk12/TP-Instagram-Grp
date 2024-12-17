@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
+    // header('Location: ./front/acceuil/accueil.php');
+    // exit;
+}
+// var_dump($_SESSION);
+// die();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +30,7 @@
             <div class="flex flex-col gap-2 items-center mt-20">
                 <input
                     type="text"
-                    name="user"
+                    name="pseudo"
                     placeholder="Nom d'utilisateur"
                     class="w-[340px] p-[8px] mb-3 text-white border rounded-md border-[#262626] bg-[#262626] focus:outline-none focus:ring-2 focus:ring-violet" />
 
