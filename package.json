@@ -1,0 +1,15 @@
+{
+  "name": "tp-grp-instagram",
+  "version": "1.0.0",
+  "description": "# 📷Clone instagram",
+  "main": "index.js",
+  "scripts": {
+     "build:css": "tailwindcss build -i ./assets/css/style.css -o ./assets/css/output.css --watch" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.16"
+  }
+}
