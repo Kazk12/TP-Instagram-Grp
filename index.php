@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+>>>>>>> frontLogin
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +16,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/output.css">
 </head>
+<<<<<<< HEAD
 <body>
     
 
@@ -13,5 +24,10 @@
     Test
 </h2>
 
+=======
+<body class="bg-black">
+
+<h1 class="bg-red-500">TEST</h1>
+>>>>>>> frontLogin
 </body>
 </html>
