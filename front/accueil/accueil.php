@@ -6,14 +6,14 @@
     <title>Aura.</title>
     <link rel="stylesheet" href="../../assets/css/output.css">
 </head>
-<body class="bg-black">
+<body class="bg-black ">
 <header>
-    <h1 class="font-logo text-violet text-3xl font-bold pl-6 pt-4 mb-4 lg:text-5xl">Aura.</h1>
+    <h1 class="font-logo bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text text-3xl font-bold pl-6 pt-4 mb-4 lg:text-5xl lg:mb-8">Aura.</h1>
 </header>
 
 <main>
     <section>
-    <article class="flex flex-col gap-3">
+    <article class="flex flex-col gap-3 lg:gap-8 xl:px-96 " >
         <div class="flex items-center justify-between px-3">
             <div class="flex items-center gap-2">
                 <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
@@ -21,7 +21,10 @@
             </div>
             <img src="../../assets/icons/doubler.png" alt="menu petits points" class="w-4">
         </div>
-        <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo d'utilisateur" class="lg:h-3/5 w-auto">
+        <div class="flex justify-center lg:h-[600px]">
+           <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo d'utilisateur" height="100%" width="auto"> 
+        </div>
+        
         <div class="flex w-6 gap-2 ml-4">
             <img src="../../assets/icons/contour-en-forme-de-coeur.png" alt="bouton j'aime">
             <img src="../../assets/icons/commentaire.png" alt="bouton commentaire">
