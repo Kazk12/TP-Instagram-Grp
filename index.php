@@ -26,7 +26,7 @@ if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
     <main class="pt-[15%] flex flex-col xl:pt-[10%]">
         <form action="./process/process_login.php" method="post">
         <section>
-            <h1 class=" text-center font-logo font-bold text-[59px] text-violet">Aura.</h1>
+            <h1 class=" text-center font-logo font-bold text-[59px] bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text">Aura.</h1>
             <div class="flex flex-col gap-2 items-center mt-20">
                 <input
                     type="text"
