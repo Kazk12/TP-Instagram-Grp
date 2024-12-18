@@ -47,5 +47,5 @@ try {
     echo "Erreur lors de l'insertion : " . $e->getMessage();
 }
 
-header("Location: http://localhost/TP-Instagram-Gp/TP-Instagram-Grp/front/accueil/accueil.php");
+header("Location: ../front/accueil/accueil.php");
 exit;
