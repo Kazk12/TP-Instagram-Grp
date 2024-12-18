@@ -2,14 +2,13 @@
 require_once '../connect/connectDB.php';
 session_start();
 
-if (!isset($_POST['pseudo']) || empty(trim($_POST['pseudo']))) {
-    echo "Le pseudo est requis.";
+if (!isset($_POST['pseudo']) || empty(trim($_POST['pseudo'])) || !isset($_POST['mdp']) || empty(trim($_POST['mdp']))) {
+    echo "Le pseudo et le mot de passe sont requis.";
     exit;
 }
 
-// var_dump($_POST);
-// die();
-$username = htmlspecialchars(trim($_POST['pseudo'])); 
+$username = htmlspecialchars(trim($_POST['pseudo']));
+$password = trim($_POST['mdp']);
 
 try {
     // Vérifier si le pseudo existe
@@ -18,26 +17,33 @@ try {
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$user) {
+    if ($user && password_verify($password, $user['mdp'])) {
+        // Connexion réussie
+        $_SESSION['pseudo'] = [
+            'id' => $user['id'],
+            'pseudo' => $user['pseudo']
+        ];
+    } elseif (!$user) {
         // Ajouter un nouvel utilisateur si le pseudo n'existe pas
-        $sql = "INSERT INTO user (pseudo) VALUES (:pseudo)";
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO user (pseudo, mdp) VALUES (:pseudo, :mdp)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([':pseudo' => $username]);
+        $stmt->execute([':pseudo' => $username, ':mdp' => $hash]);
 
-        // Stocker l'utilisateur dans la session
         $_SESSION['pseudo'] = [
             'id' => $pdo->lastInsertId(),
             'pseudo' => $username
         ];
     } else {
-        $_SESSION['pseudo'] = [
-            'id' => $user['id'],
-            'pseudo' => $user['pseudo']
-        ];
+        $_SESSION["mdp-incorect"] = "Votre mot de passe est incorect";
+        header("Location: ../index.php");
+        exit;
     }
 
     // header("Location: ../front/Acceuil/accueil.php");
     // exit;
+    // var_dump($_SESSION);
+    // die();
 } catch (PDOException $e) {
     echo "Erreur lors de l'insertion : " . $e->getMessage();
 }

@@ -34,12 +34,19 @@ if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
                     placeholder="Nom d'utilisateur"
                     class="w-[340px] p-[8px] mb-3 text-white border rounded-md border-[#262626] bg-[#262626] focus:outline-none focus:ring-2 focus:ring-violet" />
 
+
+               
                 <input
                     type="password"
-                   name="password"
+                   name="mdp"
                     placeholder="Mot de passe"
                     class="w-[340px] p-[8px] mb-4 border text-white rounded-md border-[#262626] bg-[#262626] focus:outline-none focus:ring-2 focus:ring-violet" />
 
+                    <?php if(isset($_SESSION["mdp-incorect"])): ?>
+                    <p class="text-white"><?= $_SESSION["mdp-incorect"]?></p>
+                    <?php unset($_SESSION["mdp-incorect"]); ?>
+                    
+                    <?php endif; ?>
                 <input
                     type="submit"
                     value="Connexion"
