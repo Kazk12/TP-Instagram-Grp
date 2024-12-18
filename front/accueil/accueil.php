@@ -17,7 +17,7 @@
         <article class="flex flex-col gap-3 lg:gap-8 xl:px-96 ">
             <div class="flex items-center justify-between px-3">
                 <div class="flex items-center gap-2">
-                    <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
+                    <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 h-10 rounded-full">
                     <p class="text-white font-sans font-medium text-sm">Pseudo-Guy</p>
                 </div>
                 <img src="../../assets/icons/doubler.png" alt="menu petits points" class="w-4">
