@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
-    // header('Location: ./front/acceuil/accueil.php');
+    // header('Location: ./front/accueil/accueil.php');
     // exit;
 }
 // var_dump($_SESSION);
@@ -20,6 +20,7 @@ if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/output.css">
+  
 </head>
 
 <body class="bg-black ">

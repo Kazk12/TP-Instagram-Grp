@@ -40,10 +40,12 @@ try {
         exit;
     }
 
-    // header("Location: ../front/Acceuil/accueil.php");
-    // exit;
+   
     // var_dump($_SESSION);
     // die();
 } catch (PDOException $e) {
     echo "Erreur lors de l'insertion : " . $e->getMessage();
 }
+
+header("Location: http://localhost/TP-Instagram-Gp/TP-Instagram-Grp/front/accueil/accueil.php");
+exit;
