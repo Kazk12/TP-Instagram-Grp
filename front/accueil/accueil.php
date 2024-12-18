@@ -30,7 +30,7 @@
         </div>
         <p class="text-white px-3">Liked by 6 users</p>
         <p class="text-white px-3">Pseudo : #NouvellePhotoDeProfil #Bg #-10000Aura</p>
-        <a href="" class="text-white px-3">View all comments</a>
+        <a href="../commentaire/commentaire.php" class="text-white px-3">View all comments</a>
         <form action="" method="post" class="flex items-center justify-between px-3">
             <input type="text" name="commentaire" id="commentaire" placeholder="Add a comment..." class="bg-black text-white">
             <button type="submit" ><img src="../../assets/icons/ajouter-un-bouton.png" alt="bouton ajouter commentaire" class="w-4"></button>

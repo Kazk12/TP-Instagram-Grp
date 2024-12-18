@@ -35,7 +35,7 @@ try {
             'pseudo' => $username
         ];
     } else {
-        $_SESSION["mdp-incorect"] = "Votre mot de passe est incorect";
+        $_SESSION["mdp-incorect"] = "Votre mot de passe ou votre identifiant est incorect";
         header("Location: ../index.php");
         exit;
     }
