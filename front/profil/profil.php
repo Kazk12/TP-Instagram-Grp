@@ -9,7 +9,7 @@
 <body class="bg-black">
     <main class="px-4 py-6">
 
-    <header class="flex justify-between py-3">
+    <header class="flex justify-between py-3 items-center">
     <h1 class="font-logo bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text text-3xl font-bold pl-6 pt-4 mb-4 lg:text-5xl lg:mb-8">Aura.</h1>
 
         <nav class="flex justify-end gap-6 pr-4">
@@ -18,38 +18,40 @@
         </nav>
     </header>
 
-    <section class="flex flex-col items-center">
+ 
+
+    <section class="flex flex-col items-center ">
         <!-- Conteneur de l'image et de l'article en flex-row pour les aligner horizontalement -->
-        <div class="flex flex-row items-center justify-between w-full mb-4 md:justify-around lg:flex-col">
-            <img class="w-[30%] md:w-[20%] rounded-full" src="../../Asta_Post-Timeskip_Black_Clover.webp" alt="Profile Picture">
-            <article class="flex flex-row gap-6 text-center md:text-left">
-                <div class="mb-2 text-xl text-white md:text-3xl">126 <br> posts</div>
-                <div class="mb-2 text-xl text-white md:text-3xl">427 <br> followers</div>
-                <div class="mb-2 text-xl text-white md:text-3xl">472 <br> following</div>
+        <div class="flex flex-row p-2 gap-11 justify-center items-center  w-full mb-7  lg:justify-center lg:items-center  sm:justify-center sm:items-center sm:gap-[140px] md:justify-center md:items-center  ">
+            <img class="w-[100px] md:w-[20%] sm:w-[20%] lg:w-[10%] rounded-full" src="../../Asta_Post-Timeskip_Black_Clover.webp" alt="Profile Picture">
+            <article class="flex flex-row  gap-6 text-center md:text-center sm:text-left ">
+                <div class="mb-2 text-[17px] text-white md:text-[20px]">126 <br> posts</div>
+                <div class="mb-2 text-[17px] text-white md:text-[20px]">427 <br> followers</div>
+                <div class="mb-2 text-[17px] text-white md:text-[20px]">472 <br> following</div>
             </article>
         </div>
 
-            <div class="flex items-center gap-3">
-            <p class="text-center font-semibold text-lg text-white">Rio</p>
-        <p class="text-center text-gray-600">Designer</p>
+        <div class="flex items-center gap-3">
+            <p class="text-center font-semibold text-lg text-white"><span class="font-normal">Profil de:  </span> Rio</p>
+        <p class="text-center text-gray-600">  Designer</p>
             </div>
       
-        <button type="button" class="w-full  bg-gradient-to-r from-[#020024] to-[#02d4ffcc] rounded py-2 mt-4 text-white">Modifiez profil</button>
+            <button type="button" class="w-full sm:w-full bg-gradient-to-r from-[#020024] to-[#02d4ffcc] rounded py-2 mt-4 text-white">
+    Modifiez profil
+</button>
 
-        <div class="flex flex-col gap-6 mt-6">
+        <div class="flex flex-col gap-6 mt-6 ">
             
 
-        <div class="flex w-[375px] flex-wrap gap-[2%]">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
-    <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] pb-2">
+        <div class="flex flex-wrap gap-[2%] w-[375px] sm:w-auto sm:justify-center sm:items-center  lg:w-auto lg:justify-center lg:items-center lg:mt-24 2xl:w-auto">
+  <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
+  <img src="https://via.placeholder.com/300" alt="Post 2" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
+  <img src="https://via.placeholder.com/300" alt="Post 3" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
+  <img src="https://via.placeholder.com/300" alt="Post 4" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
+  <img src="https://via.placeholder.com/300" alt="Post 5" class="w-[32%] sm:w-[30%] lg:w-[24%] pb-2">
+  <img src="https://via.placeholder.com/300" alt="Post 6" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
 </div>
+
         </div>
     </section>
 
