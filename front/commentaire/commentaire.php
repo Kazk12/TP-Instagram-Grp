@@ -82,6 +82,31 @@ try {
     </h1>
 </header>
 
+
+
+
+
+
+
+<section>
+<nav class="hidden lg:flex lg:gap-16 lg:items-center lg:px-4 lg:fixed lg:w-full lg:justify-end  lg:mt-11 ">
+        <!-- Icône de Test -->
+        <img src="../../assets/icons/Test.png" alt="test icon" class="lg:w-6 lg:h-10 lg:object-contain">
+
+        <!-- Icône Loupe (recherche) -->
+        <img src="../../assets/icons/Loupe_1.png" alt="search icon" class="lg:w-6  lg:h-10 lg:object-contain">
+
+        <!-- Icône Ajouter (post) -->
+        <img src="../../assets/icons/ajouter-un-bouton.png" alt="add button" class="lg:w-6  lg:h-12 lg:object-contain">
+
+        <!-- Photo de l'utilisateur (profil) avec un lien -->
+        <a href="../profil/profil.php">
+            <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de profil" class="lg:w-10  lg:h-10  lg:rounded-full  lg:object-cover">
+        </a>
+    </nav>
+</section>
+
+
 <main>
     <section>
         <!-- Photo et utilisateur -->
