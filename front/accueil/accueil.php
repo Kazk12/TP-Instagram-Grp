@@ -5,7 +5,7 @@ session_start();
 
 
 
-$sql = "SELECT id_user, url_photo, texteimage, pseudo FROM photo INNER JOIN user WHERE user.id = photo.id_user";
+$sql = "SELECT photo.id , id_user, url_photo, texteimage, pseudo FROM photo INNER JOIN user WHERE user.id = photo.id_user";
 
 try {
     $query = $pdo->prepare($sql);
@@ -15,6 +15,7 @@ $photos = $query->fetchAll(PDO::FETCH_ASSOC);
    
 echo "Erreur lors de la requete : " . $error->getMessage();
 }
+
 
 
 
@@ -67,8 +68,10 @@ echo "Erreur lors de la requete : " . $error->getMessage();
             </div>
             <p class="text-white px-3">Liked by 6 users</p>
             <p class="text-white px-3"><?= $photo["pseudo"] ?> : <?= $photo["texteimage"] ?></p>
-            <a href="../commentaire/commentaire.php" class="text-white px-3">View all comments</a>
+            <a href="../commentaire/commentaire.php?id=<?= $photo["id"]?>" class="text-white px-3">View all comments</a>
+
             <form action="" method="post" class="flex items-center justify-between px-3">
+
                 <input type="text" name="commentaire" id="commentaire" placeholder="Add a comment..." class="bg-black text-white">
                 <button type="submit"><img src="../../assets/icons/ajouter-un-bouton.png" alt="bouton ajouter commentaire" class="w-4"></button>
             </form>

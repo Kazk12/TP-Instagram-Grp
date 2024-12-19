@@ -1,5 +1,27 @@
 <?php 
 
+require_once '../../connect/connectDB.php';
+session_start();
+// var_dump($_SESSION);
+// die();
+
+$img = $_GET['id'];
+// var_dump($img);
+// die();
+
+$sql =  " SELECT commentaire.sms , user.pseudo   FROM `commentaire`
+ INNER JOIN user  WHERE  user.id = commentaire.id_user AND  commentaire.id_photo = :img";
+
+try {
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([":img" => $img ]);
+  $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+
+
+} catch (PDOException $error) {
+  echo "Erreur lors de la requête : " . $error->getMessage();
+}
+
 
 
 
@@ -30,11 +52,14 @@
 
 <main>
     <section>
+    
     <article class="flex flex-col gap-3">
         <div class="flex items-center justify-between px-3">
             <div class="flex items-center gap-2">
                 <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
-                <p class="text-white font-sans font-medium text-sm">Pseudo-Guy</p>
+                
+                <p class="text-white font-sans font-medium text-sm"> pseudo</p>
+               
             </div>
             <img src="../../assets/icons/doubler.png" alt="menu petits points" class="w-4">
         </div>
@@ -48,37 +73,30 @@
     </article>
 
 
-    
     <article class="flex flex-col gap-2 xl:justify-center px-4 md:px-6 lg:px-8">
-  <div class="flex items-start p-2 gap-3 sm:p-3 md:p-4">
-    <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
-    <p class="text-white font-sans font-medium text-sm sm:text-base md:text-lg">
-      <span class="block font-medium">Scammeur2darons :</span>
-      <span class="font-light text-red-400">Regardez le miskine y perd l'aura</span>
-    </p>
-  </div>
+    <?php foreach($commentaires as $commentaire) { 
+  
+      ?>
 
   <div class="flex items-start p-2 gap-3 sm:p-3 md:p-4">
     <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
     <p class="text-white font-sans font-medium text-sm sm:text-base md:text-lg">
-      <span class="block font-medium">Arracheur2sac :</span>
-      <span class="font-light text-red-400">ah lui il a pas préparé ces 10balle mdrrr</span>
+      <span class="block font-medium"><?= $commentaire['pseudo'] ?></span>
+      <span class="font-light text-red-400"><?= $commentaire['sms'] ?></span>
     </p>
   </div>
+  <?php } ?>
+    </article>
 
-  <div class="flex items-start p-2 gap-3 sm:p-3 md:p-4">
-    <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
-    <p class="text-white font-sans font-medium text-sm sm:text-base md:text-lg">
-      <span class="block font-medium">SaCharbone :</span>
-      <span class="font-light text-red-400">si lui on peut on peut tous</span>
-    </p>
-  </div>
-</article>
+    
+  
 
 
 
 <form action="../../process/process_commentaire.php"   method="post" class="flex items-center justify-between px-3">
-            <input type="text" name="commentaire" id="commentaire" placeholder="Ajoutez un commentaire" class="bg-black text-white">
+    
+            <input type="text" name="sms" id="sms" placeholder="Ajoutez un commentaire" class="bg-black text-white">
+            <input type="hidden" name="id" id="id" value="<?= $img ?>" placeholder="Ajoutez un commentaire" class="bg-black text-white">
             <button type="submit" ><img src="../../assets/icons/ajouter-un-bouton.png" alt="bouton ajouter commentaire" class="w-4"></button>
         </form> 
 
