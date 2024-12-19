@@ -101,6 +101,31 @@ try {
         </form> 
 
     </section>
+
+
+
+    <footer class="bg-black py-2 fixed bottom-0 left-0 w-full z-10 md:hidden">
+    <nav class="flex justify-evenly items-center px-4">
+        <!-- Icône de Test -->
+         <a href="../accueil/accueil.php">
+         <img src="../../assets/icons/Test.png" alt="test icon" class="w-10 h-10 object-contain">
+
+         </a>
+
+        <!-- Icône Loupe (recherche) -->
+        <img src="../../assets/icons/Loupe_1.png" alt="search icon" class="w-10 h-10 object-contain">
+
+        <!-- Icône Ajouter (post) -->
+        <img src="../../assets/icons/ajouter-un-bouton.png" alt="add button" class="w-12 h-12 object-contain">
+
+        <!-- Photo de l'utilisateur (profil) avec un lien -->
+        <a href="../profil/profil.php">
+            <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de profil" class="w-10 h-10 rounded-full object-cover">
+        </a>
+    </nav>
+</footer>
+
+
 </main>
 
 </body>
