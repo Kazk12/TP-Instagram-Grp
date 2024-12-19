@@ -11,11 +11,13 @@ $sql = "SELECT * FROM photo where id_user = :id_user";
 try {
     $query = $pdo->prepare($sql);
     $query->execute([":id_user" => $_SESSION["pseudo"]["id"] ]);
-$result = $query->fetchAll();
+$result = $query->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $error) {
    
 echo "Erreur lors de la requete : " . $error->getMessage();
 }
+
+var_dump($result);
 
 
 
@@ -33,7 +35,7 @@ echo "Erreur lors de la requete : " . $error->getMessage();
     <title>Document</title>
     <link rel="stylesheet" href="../../assets/css/output.css">
 </head>
-<body class="bg-black">
+<body class="bg-white">
     <main class="px-4 py-6">
 
     <header class="flex justify-between py-3 items-center">
@@ -71,6 +73,7 @@ echo "Erreur lors de la requete : " . $error->getMessage();
             
 
         <div class="flex flex-wrap gap-[2%] w-[375px] sm:w-auto sm:justify-center sm:items-center  lg:w-auto lg:justify-center lg:items-center lg:mt-24 2xl:w-auto">
+            
   <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
   <img src="https://via.placeholder.com/300" alt="Post 2" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
   <img src="https://via.placeholder.com/300" alt="Post 3" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
