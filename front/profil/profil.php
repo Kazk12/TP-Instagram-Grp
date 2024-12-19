@@ -76,7 +76,7 @@ $pseudoProfil = $_SESSION["pseudo"]["pseudo"];
 
         <div class="flex flex-wrap gap-[2%] w-[375px] sm:w-auto sm:justify-center sm:items-center  lg:w-auto lg:justify-center lg:items-center lg:mt-24 2xl:w-auto">
         <?php foreach ($result as $photo){  ?>  
-  <img src="../../<?=$photo["url_photo"]?>" alt="Post 1" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
+  <img src="../<?=$photo["url_photo"]?>" alt="Post 1" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
 
 <?php 
         }
