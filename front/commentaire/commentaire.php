@@ -1,3 +1,17 @@
+<?php 
+
+
+
+
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,10 +77,10 @@
 
 
 
-<form action="" method="post" class="flex items-center justify-between px-3">
+<form action="../../process/process_commentaire.php"   method="post" class="flex items-center justify-between px-3">
             <input type="text" name="commentaire" id="commentaire" placeholder="Ajoutez un commentaire" class="bg-black text-white">
             <button type="submit" ><img src="../../assets/icons/ajouter-un-bouton.png" alt="bouton ajouter commentaire" class="w-4"></button>
-        </form>
+        </form> 
 
     </section>
 </main>
