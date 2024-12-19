@@ -4,20 +4,20 @@ require_once '../../connect/connectDB.php';
 
 session_start();
 
+$idP = $_GET["id"];
 
 
-$sql = "SELECT * FROM photo where id_user = :id_user";
+
+$sql = "SELECT * FROM photo where id_user = :id";
 
 try {
     $query = $pdo->prepare($sql);
-    $query->execute([":id_user" => $_SESSION["pseudo"]["id"] ]);
+    $query->execute([":id" => $idP ]);
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $error) {
    
 echo "Erreur lors de la requete : " . $error->getMessage();
 }
-
-$pseudoProfil = $_SESSION["pseudo"]["pseudo"];
 
 
 
@@ -64,7 +64,7 @@ $pseudoProfil = $_SESSION["pseudo"]["pseudo"];
         </div>
 
         <div class="flex items-center gap-3">
-            <p class="text-center font-semibold text-lg text-white"><span class="font-normal"></span> <?=$pseudoProfil?></p>
+            <p class="text-center font-semibold text-lg text-white"><span class="font-normal"></span> </p>
         <p class="text-center text-gray-600">  Designer</p>
             </div>
       <a href="./ajoutPhoto.php">
