@@ -33,7 +33,7 @@ echo "Erreur lors de la requete : " . $error->getMessage();
     <title>Aura.</title>
     <link rel="stylesheet" href="../../assets/css/output.css">
 </head>
-<body class="bg-black ">
+<body class="bg-purple-500 ">
 
 <header>
     <h1 class="font-logo bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text text-3xl font-bold pl-6 pt-4 mb-4 lg:text-5xl lg:mb-8">Aura.</h1>
@@ -48,6 +48,16 @@ echo "Erreur lors de la requete : " . $error->getMessage();
 
         foreach ($photos as $photo ) {
         
+        $count = "SELECT COUNT(*) FROM photoaime WHERE id_photo = :id_photo" ;
+        try {
+            $query = $pdo->prepare($count);
+            $query->execute([":id_photo" => $photo["id"]]);
+        $likes = $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $error) {
+           
+        echo "Erreur lors de la requete : " . $error->getMessage();
+        }
+      
         
         
         ?>
@@ -63,10 +73,18 @@ echo "Erreur lors de la requete : " . $error->getMessage();
                 <img src="../../assets/icons/<?= $photo["url_photo"] ?>" alt="photo d'utilisateur" height="100%" width="auto"> 
             </div>
             <div class="flex w-6 gap-2 ml-4">
+                <form action="../../process/process_Like.php" method="post">
+            <input type="hidden" name="idDeLaPhoto" value="<?= $photo["id"]?>">
+            <input type="submit" name="Like" value="Liker">
+
+                </form>
                 <img src="../../assets/icons/contour-en-forme-de-coeur.png" alt="bouton j'aime">
                 <img src="../../assets/icons/commentaire.png" alt="bouton commentaire">
             </div>
-            <p class="text-white px-3">Liked by 6 users</p>
+        <?php foreach ($likes as $like): ?>
+
+            <p class="text-white px-3">Liked by <?= $like ?> users</p>
+            <?php endforeach ?>
             <p class="text-white px-3"><?= $photo["pseudo"] ?> : <?= $photo["texteimage"] ?></p>
             <a href="../commentaire/commentaire.php?id=<?= $photo["id"]?>" class="text-white px-3">View all comments</a>
 
