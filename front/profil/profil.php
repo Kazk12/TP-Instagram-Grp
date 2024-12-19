@@ -17,7 +17,8 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 echo "Erreur lors de la requete : " . $error->getMessage();
 }
 
-var_dump($result);
+$pseudoProfil = $_SESSION["pseudo"]["pseudo"];
+
 
 
 
@@ -35,7 +36,7 @@ var_dump($result);
     <title>Document</title>
     <link rel="stylesheet" href="../../assets/css/output.css">
 </head>
-<body class="bg-white">
+<body class="bg-black">
     <main class="px-4 py-6">
 
     <header class="flex justify-between py-3 items-center">
@@ -61,7 +62,7 @@ var_dump($result);
         </div>
 
         <div class="flex items-center gap-3">
-            <p class="text-center font-semibold text-lg text-white"><span class="font-normal">Profil de:  </span> Rio</p>
+            <p class="text-center font-semibold text-lg text-white"><span class="font-normal"></span> <?=$pseudoProfil?></p>
         <p class="text-center text-gray-600">  Designer</p>
             </div>
       
@@ -73,13 +74,14 @@ var_dump($result);
             
 
         <div class="flex flex-wrap gap-[2%] w-[375px] sm:w-auto sm:justify-center sm:items-center  lg:w-auto lg:justify-center lg:items-center lg:mt-24 2xl:w-auto">
-            
-  <img src="https://via.placeholder.com/300" alt="Post 1" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
-  <img src="https://via.placeholder.com/300" alt="Post 2" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
-  <img src="https://via.placeholder.com/300" alt="Post 3" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
-  <img src="https://via.placeholder.com/300" alt="Post 4" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
-  <img src="https://via.placeholder.com/300" alt="Post 5" class="w-[32%] sm:w-[30%] lg:w-[24%] pb-2">
-  <img src="https://via.placeholder.com/300" alt="Post 6" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
+        <?php foreach ($result as $photo){  ?>  
+  <img src="../../<?=$photo["url_photo"]?>" alt="Post 1" class="w-[32%] sm:w-[30%] lg:w-[24%]  pb-2">
+
+<?php 
+        }
+        ?>
+
+ 
 </div>
 
         </div>
