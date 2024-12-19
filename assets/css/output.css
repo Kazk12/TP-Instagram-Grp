@@ -759,12 +759,20 @@ video {
   gap: 0.75rem;
 }
 
+.gap-4{
+  gap: 1rem;
+}
+
 .gap-6{
   gap: 1.5rem;
 }
 
 .gap-\[2\%\]{
   gap: 2%;
+}
+
+.gap-8{
+  gap: 2rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]){
@@ -848,6 +856,7 @@ video {
   background-color: rgb(58 12 163 / var(--tw-bg-opacity, 1));
 }
 
+<<<<<<< HEAD
 .bg-red-500{
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
@@ -862,6 +871,8 @@ video {
   background-color: transparent;
 }
 
+=======
+>>>>>>> AjoutCommentaire
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }

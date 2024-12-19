@@ -63,7 +63,7 @@ echo "Erreur lors de la requete : " . $error->getMessage();
     <p class="text-white">
 
     </p>
-    <section class="">
+    <section class="flex flex-col gap-8">
         <?php 
 
         foreach ($photos as $photo ) {
@@ -93,9 +93,10 @@ echo "Erreur lors de la requete : " . $error->getMessage();
             <p class="text-white px-3"><?= $photo["pseudo"] ?> : <?= $photo["texteimage"] ?></p>
             <a href="../commentaire/commentaire.php?id=<?= $photo["id"]?>" class="text-white px-3">View all comments</a>
 
-            <form action="" method="post" class="flex items-center justify-between px-3">
+            <form action="../../process/process_commentaire.php" method="post" class="flex items-center justify-between px-3">
 
-                <input type="text" name="commentaire" id="commentaire" placeholder="Add a comment..." class="bg-black text-white">
+            <input type="text" name="sms" id="sms" placeholder="Ajoutez un commentaire" class="bg-black text-white">
+            <input type="hidden" name="id" id="id" value="<?= htmlspecialchars($photo["id"]) ?>">
                 <button type="submit"><img src="../../assets/icons/ajouter-un-bouton.png" alt="bouton ajouter commentaire" class="w-4"></button>
             </form>
         </article>

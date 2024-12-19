@@ -8,7 +8,10 @@ $idP = $_GET["id"];
 
 
 
-$sql = "SELECT * FROM photo where id_user = :id";
+$sql = "SELECT photo.id_user, photo.url_photo, photo.texteImage, user.pseudo
+ FROM photo 
+ INNER JOIN user WHERE user.id = photo.id_user
+ AND id_user = :id";
 
 try {
     $query = $pdo->prepare($sql);
@@ -18,6 +21,10 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
    
 echo "Erreur lors de la requete : " . $error->getMessage();
 }
+
+
+
+
 
 
 
@@ -64,14 +71,14 @@ echo "Erreur lors de la requete : " . $error->getMessage();
         </div>
 
         <div class="flex items-center gap-3">
-            <p class="text-center font-semibold text-lg text-white"><span class="font-normal"></span> </p>
+            <p class="text-center font-semibold text-lg text-white"><span class="font-normal"><?= $result[0]["pseudo"] ?>   </span> </p>
         <p class="text-center text-gray-600">  Designer</p>
             </div>
-      <a href="./ajoutPhoto.php">
+      
       <button type="button" class="w-full sm:w-full bg-gradient-to-r from-[#020024] to-[#02d4ffcc] rounded py-2 mt-4 text-white">
-    Ajouter une photo
+    Envoyer un message
 </button>
-      </a>
+      
             
 
         <div class="flex flex-col gap-6 mt-6 ">
