@@ -60,7 +60,7 @@ echo "Erreur lors de la requete : " . $error->getMessage();
                 <img src="../../assets/icons/doubler.png" alt="menu petits points" class="w-4">
             </div>
             <div class="flex justify-center lg:h-[600px]">
-                <img src="../../assets/icons/<?= $photo["url_photo"] ?>" alt="photo d'utilisateur" height="100%" width="auto"> 
+                <img src="../<?= $photo["url_photo"] ?>" alt="photo d'utilisateur" height="100%" width="auto"> 
             </div>
             <div class="flex w-6 gap-2 ml-4">
                 <img src="../../assets/icons/contour-en-forme-de-coeur.png" alt="bouton j'aime">
