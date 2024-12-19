@@ -1,3 +1,30 @@
+<?php
+
+require_once '../../connect/connectDB.php';
+
+session_start();
+
+
+
+$sql = "SELECT * FROM photo where id_user = :id_user";
+
+try {
+    $query = $pdo->prepare($sql);
+    $query->execute([":id_user" => $_SESSION["pseudo"]["id"] ]);
+$result = $query->fetchAll();
+} catch (PDOException $error) {
+   
+echo "Erreur lors de la requete : " . $error->getMessage();
+}
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

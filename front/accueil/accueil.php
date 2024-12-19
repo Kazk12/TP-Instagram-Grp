@@ -1,3 +1,29 @@
+<?php
+require_once '../../connect/connectDB.php';
+
+session_start();
+
+
+
+$sql = "SELECT id_user, url_photo, texteimage, pseudo FROM photo INNER JOIN user WHERE user.id = photo.id_user";
+
+try {
+    $query = $pdo->prepare($sql);
+    $query->execute();
+$photos = $query->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $error) {
+   
+echo "Erreur lors de la requete : " . $error->getMessage();
+}
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,47 +39,66 @@
 </header>
 
 <main class="pb-16"> <!-- Ajout de padding-bottom pour éviter que le footer ne cache le contenu -->
+    <p class="text-white">
+
+    </p>
     <section>
+        <?php 
+
+        foreach ($photos as $photo ) {
+        
+        
+        
+        ?>
         <article class="flex flex-col gap-3 lg:gap-8 xl:px-96 ">
             <div class="flex items-center justify-between px-3">
                 <div class="flex items-center gap-2">
-                    <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 h-10 rounded-full">
-                    <p class="text-white font-sans font-medium text-sm">Pseudo-Guy</p>
+                <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
+                    <p class="text-white font-sans font-medium text-sm"><?= $photo["pseudo"] ?></p>
                 </div>
                 <img src="../../assets/icons/doubler.png" alt="menu petits points" class="w-4">
             </div>
             <div class="flex justify-center lg:h-[600px]">
-                <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo d'utilisateur" height="100%" width="auto"> 
+                <img src="../../assets/icons/<?= $photo["url_photo"] ?>" alt="photo d'utilisateur" height="100%" width="auto"> 
             </div>
             <div class="flex w-6 gap-2 ml-4">
                 <img src="../../assets/icons/contour-en-forme-de-coeur.png" alt="bouton j'aime">
                 <img src="../../assets/icons/commentaire.png" alt="bouton commentaire">
             </div>
             <p class="text-white px-3">Liked by 6 users</p>
-            <p class="text-white px-3">Pseudo : #NouvellePhotoDeProfil #Bg #-10000Aura</p>
+            <p class="text-white px-3"><?= $photo["pseudo"] ?> : <?= $photo["texteimage"] ?></p>
             <a href="../commentaire/commentaire.php" class="text-white px-3">View all comments</a>
             <form action="" method="post" class="flex items-center justify-between px-3">
                 <input type="text" name="commentaire" id="commentaire" placeholder="Add a comment..." class="bg-black text-white">
                 <button type="submit"><img src="../../assets/icons/ajouter-un-bouton.png" alt="bouton ajouter commentaire" class="w-4"></button>
             </form>
         </article>
+
+<?php 
+        }
+
+?>
+
     </section>
 
     <footer class="bg-black py-2 fixed bottom-0 left-0 w-full z-10 md:hidden">
-        <nav class="flex justify-evenly items-center px-4">
-            <!-- Icône de Test -->
-            <img src="../../assets/icons/Test.png" alt="test icon" class="w-10 h-10 object-contain">
+    <nav class="flex justify-evenly items-center px-4">
+        <!-- Icône de Test -->
+        <img src="../../assets/icons/Test.png" alt="test icon" class="w-10 h-10 object-contain">
 
-            <!-- Icône Loupe (recherche) -->
-            <img src="../../assets/icons/Loupe_1.png" alt="search icon" class="w-10 h-10 object-contain">
+        <!-- Icône Loupe (recherche) -->
+        <img src="../../assets/icons/Loupe_1.png" alt="search icon" class="w-10 h-10 object-contain">
 
-            <!-- Icône Ajouter (post) -->
-            <img src="../../assets/icons/ajouter-un-bouton.png" alt="add button" class="w-12 h-12 object-contain">
+        <!-- Icône Ajouter (post) -->
+        <img src="../../assets/icons/ajouter-un-bouton.png" alt="add button" class="w-12 h-12 object-contain">
 
-            <!-- Photo de l'utilisateur (profil) -->
+        <!-- Photo de l'utilisateur (profil) avec un lien -->
+        <a href="../profil/profil.php">
             <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de profil" class="w-10 h-10 rounded-full object-cover">
-        </nav>
-    </footer>
+        </a>
+    </nav>
+</footer>
+
 </main>
 
 </body>
