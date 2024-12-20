@@ -9,6 +9,7 @@ $NomCherche = $_POST["recherche"];
 
 
 
+
 try {
     // Vérifier si le pseudo existe
     $stmt = $pdo->prepare('SELECT id FROM user WHERE pseudo = :pseudo');
