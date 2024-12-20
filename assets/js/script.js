@@ -56,13 +56,13 @@ function addBotMessage(message) {
 }
 
 function respondToUser(userMessage) {
-    // Replace this with your chatbot logic
+  
     setTimeout(() => {
         addBotMessage("This is a response from the chatbot.");
     }, 500);
 }
 
-// Automatically open the chatbox on page load
+
 toggleChatbox();
 
        
