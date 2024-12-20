@@ -103,9 +103,15 @@ try {
                         <img src="../<?= $photo["url_photo"] ?>" alt="photo d'utilisateur" height="100%" width="auto">
                     </div>
                     <div class="flex w-6 gap-2 ml-4">
+
+
+
                         <form action="../../process/process_Like.php" method="post">
                             <input type="hidden" name="idDeLaPhoto" value="<?= $photo["id"] ?>">
-                            <input type="submit" name="Like" value="Liker">
+                            <input class="text-white" type="submit" name="Like" value="Liker">
+
+
+                            
 
                         </form>
                         <img src="../../assets/icons/contour-en-forme-de-coeur.png" alt="bouton j'aime">
