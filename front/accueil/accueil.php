@@ -41,9 +41,9 @@ try {
 
     <header>
         <h1 class="font-logo bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text text-3xl font-bold pl-6 pt-4 mb-4 lg:text-5xl lg:mb-8">Aura.</h1>
-        <form action="" method="post">
+        <form action="../../process/process_search.php" method="post">
             <div class="hidden lg:flex lg:w-full lg:justify-end">
-                <input type="text" placeholder="recherche"> <img src="../../assets/icons/Loupe_1.png" alt="search icon" class="lg:w-6  lg:h-10 lg:object-contain">
+                <input type="text" name="recherche" placeholder="recherche"> 
             </div>
         </form>
 
