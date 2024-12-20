@@ -39,10 +39,7 @@ echo "Erreur lors de la requete : " . $error->getMessage();
 
 <header>
     <h1 class="font-logo bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text text-3xl font-bold pl-6 pt-4 mb-4 lg:text-5xl lg:mb-8">Aura.</h1>
-</header>
-
-<section>
-<nav class="hidden lg:flex lg:justify-center lg:gap-16 lg:items-center lg:px-4 lg:fixed   ">
+    <nav class="hidden lg:flex lg:justify-center lg:gap-16 lg:items-center lg:px-4 lg:fixed   ">
         <!-- Icône de Test -->
         <img src="../../assets/icons/Test.png" alt="test icon" class="lg:w-6 lg:h-10 lg:object-contain">
 
@@ -57,7 +54,8 @@ echo "Erreur lors de la requete : " . $error->getMessage();
             <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de profil" class="lg:w-10  lg:h-10  lg:rounded-full  lg:object-cover">
         </a>
     </nav>
-</section>
+</header>
+
 
 <main class="pb-16 "> <!-- Ajout de padding-bottom pour éviter que le footer ne cache le contenu -->
     <p class="text-white">

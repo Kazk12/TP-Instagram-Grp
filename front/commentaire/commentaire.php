@@ -2,6 +2,9 @@
 require_once '../../connect/connectDB.php';
 session_start();
 
+
+
+
 $img = $_GET['id']; // ID de l'image
 
 // Récupérer les commentaires associés à la photo
