@@ -33,7 +33,7 @@ echo "Erreur lors de la requete : " . $error->getMessage();
     <title>Aura.</title>
     <link rel="stylesheet" href="../../assets/css/output.css">
 </head>
-<body class="bg-purple-500 ">
+<body class="bg-black ">
 
 
 
