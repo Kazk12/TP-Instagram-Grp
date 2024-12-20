@@ -10,12 +10,12 @@ require_once '../connect/connectDB.php';
 
 session_start();
 
-// var_dump($_SESSION);
-// var_dump($_POST);
-// die();
+if (!isset($_SESSION['pseudo']['id']) || !isset($_POST['content']) || !isset($_POST['id_receveur'])) {
+    echo "Données manquantes.";
+    exit;
+}
 
-
-
+$content = htmlspecialchars(trim($_POST['content']));
 
 try {
     // Si aucun like n'existe, on insère le like
@@ -23,7 +23,7 @@ try {
     $stmt = $pdo->prepare($insertSql);
     $stmt->execute([
         ':id_user' => $_SESSION['pseudo']['id'],
-        ':content' => $_POST['content'],
+        ':content' => $content,
         ':id_receveur' => $_POST['id_receveur']
     ]);
     
