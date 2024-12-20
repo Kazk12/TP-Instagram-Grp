@@ -35,12 +35,12 @@ try {
     <link rel="stylesheet" href="../../assets/css/output.css">
 </head>
 
-<body class="bg-black ">
+<body class="bg-zinc-900 ">
 
 
 
     <header>
-        <h1 class="font-logo bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text text-3xl font-bold pl-6 pt-4 mb-4 lg:text-5xl lg:mb-8">Aura.</h1>
+        <h1 class="font-logo bg-gradient-to-r from-[#02d4ffcc] to-[#020024] text-transparent bg-clip-text text-3xl font-bold pl-6 pt-4 mb-10 lg:text-5xl lg:mb-8">Aura.</h1>
         <form action="../../process/process_search.php" method="post">
             <div class="hidden lg:flex lg:w-full lg:justify-end">
                 <input type="text" name="recherche" placeholder="recherche"> 
@@ -88,8 +88,8 @@ try {
 
 
             ?>
-                <article class="flex flex-col gap-3 lg:gap-8 xl:px-96 ">
-                    <div class="flex items-center justify-between px-3">
+                <article class="flex flex-col gap-2 lg:gap-8 xl:px-96 ">
+                    <div class="flex items-center justify-between px-3 mb-8">
                         <div class="flex items-center gap-2">
                             <a href="../profil/profilOther.php?id=<?= $photo["id_user"] ?>">
                                 <img src="../../GTzblVSWUAAIMp-.jpg" alt="photo de singe" class="w-10 rounded-full">
@@ -99,7 +99,7 @@ try {
                         </div>
                         <img src="../../assets/icons/doubler.png" alt="menu petits points" class="w-4">
                     </div>
-                    <div class="flex justify-center lg:h-[600px]">
+                    <div class="flex justify-center lg:h-[600px] w-[100%] mb-4">
                         <img src="../<?= $photo["url_photo"] ?>" alt="photo d'utilisateur" height="100%" width="auto">
                     </div>
                     <div class="flex w-6 gap-2 ml-4">
@@ -122,7 +122,7 @@ try {
                         <p class="text-white px-3">Liked by <?= $like ?> users</p>
                     <?php endforeach ?>
                     <p class="text-white px-3"><?= $photo["pseudo"] ?> : <?= $photo["texteimage"] ?></p>
-                    <a href="../commentaire/commentaire.php?id=<?= $photo["id"] ?>" class="text-white px-3">View all comments</a>
+                    <a href="../commentaire/commentaire.php?id=<?= $photo["id"] ?>" class="text-white px-3 ">View all comments</a>
 
                     <form action="../../process/process_commentaire.php" method="post" class="flex items-center justify-between px-3">
 

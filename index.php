@@ -23,12 +23,12 @@ if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
   
 </head>
 
-<body class="bg-black ">
-    <main class="pt-[15%] flex flex-col xl:pt-[10%]">
+<body class="bg-zinc-900 ">
+    <main class="pt-[20%] flex flex-col xl:pt-[10%]">
         <form action="./process/process_login.php" method="post">
         <section>
-            <h1 class=" text-center font-logo font-bold text-[59px] bg-gradient-to-r from-blue-400 via-purple-600 to-pink-500 text-transparent bg-clip-text">Aura.</h1>
-            <div class="flex flex-col gap-2 items-center mt-20">
+            <h1 class=" text-center font-logo font-bold text-[80px] bg-gradient-to-r from-[#02d4ffcc]  to-[#020024] text-transparent bg-clip-text ">Aura.</h1>
+            <div class="flex flex-col gap-2 items-center mt-40">
                 <input
                     type="text"
                     name="pseudo"
@@ -51,8 +51,8 @@ if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
                 <input
                     type="submit"
                     value="Connexion"
-                    class="w-[340px] p-[8px] bg-violet text-white font-bold rounded-md cursor-pointer hover:bg-blue-600" />
-                >
+                    class="w-[340px] p-[8px] bg-gradient-to-r from-[#020024] to-[#02d4ffcc] text-white font-bold rounded-md cursor-pointer hover:bg-blue-600" />
+                
             </div>
         </section>
         </form>
